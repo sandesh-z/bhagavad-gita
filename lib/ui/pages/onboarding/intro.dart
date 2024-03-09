@@ -1,5 +1,6 @@
 import 'package:bhagavad_gita/ui/pages/onboarding/get_started.dart';
 import 'package:bhagavad_gita/ui/pages/onboarding/select_language.dart';
+import 'package:bhagavad_gita/ui/res/assets.dart';
 import 'package:bhagavad_gita/utils/custom_slide_transition.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/dot_widget.dart';
@@ -17,9 +18,9 @@ class _IntroPageState extends State<IntroPage> {
 
   //length of imagePaths, titles and subtitles should be equal
   final List<String> imagePaths = [
-    "assets/images/intro1.png",
-    "assets/images/intro2.png",
-    "assets/images/intro3.png",
+    Assets.intro1,
+    Assets.intro2,
+    Assets.intro3,
   ];
   final List<String> titles = [
     "Bhagavad Gita - Simplified",

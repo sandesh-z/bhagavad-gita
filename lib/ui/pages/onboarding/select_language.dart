@@ -1,6 +1,8 @@
 import 'package:bhagavad_gita/ui/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
+import '../../res/assets.dart';
+
 class SelectLanguagePage extends StatefulWidget {
   const SelectLanguagePage({super.key});
 
@@ -30,7 +32,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/language_icon.png",
+                      Assets.languageIcon,
                       height: 100.0,
                       width: 80.0,
                     ),
@@ -75,13 +77,11 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
               Positioned.fill(
                   child: Align(
                       alignment: Alignment.topLeft,
-                      child: Image.asset(
-                          "assets/images/corners/top_left_corner.png"))),
+                      child: Image.asset(Assets.topLeftCornerSprite))),
               Positioned.fill(
                   child: Align(
                 alignment: Alignment.bottomRight,
-                child: Image.asset(
-                    "assets/images/corners/bottom_right_corner.png"),
+                child: Image.asset(Assets.bottomRightCornerSprite),
               )),
             ],
           ),
