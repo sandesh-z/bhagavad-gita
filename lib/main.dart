@@ -1,4 +1,4 @@
-import 'package:bhagavad_gita/ui/pages/home.dart';
+import 'package:bhagavad_gita/ui/pages/onboarding/intro.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +11,10 @@ class BhagavadGita extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePage());
+        home: const IntroPage());
   }
 }
