@@ -19,4 +19,6 @@ class Assets {
       "assets/images/home/verse_of_day_fg.jpeg";
   static const String verseOfTheDayBackgournd =
       "assets/images/home/verse_of_the_day_background.png";
+
+  static const String chapterIcon = "assets/images/chapter_decoration.png";
 }
