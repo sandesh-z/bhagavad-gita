@@ -16,6 +16,13 @@ class CustomDiagonalSlideTransition extends PageRouteBuilder {
               child: child,
             );
           },
-          transitionDuration: const Duration(milliseconds: 600),
+          transitionDuration: const Duration(milliseconds: 300),
         );
+}
+
+//
+String truncateWithEllipsis(String text, int maxWords) {
+  final words = text.split(' ');
+  if (words.length <= maxWords) return text;
+  return '${words.sublist(0, maxWords).join(' ')}...';
 }
