@@ -2,6 +2,7 @@ import 'package:bhagavad_gita/ui/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/assets.dart';
+import '../../widgets/radio_buttons.dart';
 
 class SelectLanguagePage extends StatefulWidget {
   const SelectLanguagePage({super.key});
@@ -47,7 +48,11 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                       "(Don't worry you can change it later)",
                       textAlign: TextAlign.center,
                     ),
-                    const RadioButtons(),
+                    const RadioButtons(
+                      firstItem: "English",
+                      secondItem: "Hindi",
+                      isLanguage: true,
+                    ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xffF9902D)),
@@ -87,75 +92,6 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class RadioButtons extends StatefulWidget {
-  const RadioButtons({super.key});
-
-  @override
-  State<RadioButtons> createState() => _RadioButtonsState();
-}
-
-class _RadioButtonsState extends State<RadioButtons> {
-  int selectedOption = 1;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const SizedBox(height: 10.0),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 30,
-              child: Radio<int>(
-                value: 1,
-                groupValue: selectedOption,
-                fillColor: MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) {
-                  return const Color(0xfffeb556);
-                }),
-                onChanged: (value) {
-                  setState(() {
-                    selectedOption = value ?? 1;
-                  });
-                },
-              ),
-            ),
-            const SizedBox(width: 5.0),
-            const Text("English"),
-          ],
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 30,
-              child: Radio<int>(
-                value: 2,
-                groupValue: selectedOption,
-                activeColor: const Color(0xffF9902D),
-                fillColor: MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) {
-                  return const Color(0xfffeb556);
-                }),
-                onChanged: (value) {
-                  setState(() {
-                    selectedOption = value ?? 1;
-                  });
-                },
-              ),
-            ),
-            const SizedBox(width: 5.0),
-            const Text("Hindi   "),
-          ],
-        ),
-        const SizedBox(height: 20.0),
-      ],
     );
   }
 }

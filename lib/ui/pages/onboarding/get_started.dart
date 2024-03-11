@@ -1,4 +1,5 @@
 import 'package:bhagavad_gita/ui/pages/onboarding/intro.dart';
+import 'package:bhagavad_gita/ui/res/assets.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class GetStartedPage extends StatelessWidget {
       backgroundColor: Color(0xff16141C),
       body: Pages(
           showControls: false,
-          imagePath: "assets/images/intro4.png",
+          imagePath: Assets.intro4,
           title: "Let's start",
           subTitle: "Start app and enjoy it"),
     );
