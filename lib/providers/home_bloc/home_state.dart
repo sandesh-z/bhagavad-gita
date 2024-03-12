@@ -8,6 +8,7 @@ class HomeState with _$HomeState {
     required List<ChapterModel> allChapters,
     required ChapterModel? chapter,
     required List<VerseModel> allVerses,
+    required VerseModel? verse,
   }) = _HomeState;
 
   factory HomeState.initial() => HomeState(
@@ -15,5 +16,6 @@ class HomeState with _$HomeState {
       isLoading: false,
       allChapters: [],
       chapter: null,
-      allVerses: []);
+      allVerses: [],
+      verse: null);
 }

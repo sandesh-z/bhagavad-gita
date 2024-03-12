@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../core/shared_preferences/shared_pref_util.dart';
 import '../../models/chapter_model.dart';
 import '../../models/verse_model.dart';
 
@@ -21,6 +22,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetAllChapters>(_onGetAllChapters);
     on<_GetChapter>(_onGetChapter);
     on<_GetAllVerses>(_onGetAllVerses);
+    on<_GetPaticularVerse>(_onGetPaticularVerse);
   }
   FutureOr<void> _onSetinitialState(
       _SetinitialState event, Emitter<HomeState> emit) {
@@ -47,5 +49,21 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       _GetChapter event, Emitter<HomeState> emit) async {
     final res = await bhagavadRemoteDataSource.getChapter(event.chapter);
     emit(res.fold((l) => state.copyWith(), (r) => state.copyWith(chapter: r)));
+  }
+
+  FutureOr<void> _onGetPaticularVerse(
+      _GetPaticularVerse event, Emitter<HomeState> emit) async {
+    LastReadModel? lastRead = await loadSavedData();
+    emit(state.copyWith(isLoading: true));
+    int chapterNum = lastRead?.chapterNumber ?? 7;
+    int verseNum = lastRead?.verseNumber ?? 27;
+    final res =
+        await bhagavadRemoteDataSource.getVerseDetails(chapterNum, verseNum);
+    emit(res.fold((l) => state.copyWith(isLoading: false),
+        (r) => state.copyWith(verse: r, isLoading: false)));
+  }
+
+  Future<LastReadModel?> loadSavedData() async {
+    return await SharedPreferencesUtils.getLastReadModel();
   }
 }

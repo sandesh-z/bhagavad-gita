@@ -22,6 +22,7 @@ mixin _$HomeEvent {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomeEvent {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomeEvent {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HomeEvent {
     required TResult Function(_GetAllChapters value) getAllChapters,
     required TResult Function(_GetChapter value) getChapter,
     required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HomeEvent {
     TResult? Function(_GetAllChapters value)? getAllChapters,
     TResult? Function(_GetChapter value)? getChapter,
     TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HomeEvent {
     TResult Function(_GetAllChapters value)? getAllChapters,
     TResult Function(_GetChapter value)? getChapter,
     TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +133,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
   }) {
     return setInitialState();
   }
@@ -138,6 +145,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
   }) {
     return setInitialState?.call();
   }
@@ -149,6 +157,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
     required TResult orElse(),
   }) {
     if (setInitialState != null) {
@@ -164,6 +173,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     required TResult Function(_GetAllChapters value) getAllChapters,
     required TResult Function(_GetChapter value) getChapter,
     required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
   }) {
     return setInitialState(this);
   }
@@ -175,6 +185,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult? Function(_GetAllChapters value)? getAllChapters,
     TResult? Function(_GetChapter value)? getChapter,
     TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
   }) {
     return setInitialState?.call(this);
   }
@@ -186,6 +197,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult Function(_GetAllChapters value)? getAllChapters,
     TResult Function(_GetChapter value)? getChapter,
     TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
     required TResult orElse(),
   }) {
     if (setInitialState != null) {
@@ -241,6 +253,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
   }) {
     return getAllChapters();
   }
@@ -252,6 +265,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
   }) {
     return getAllChapters?.call();
   }
@@ -263,6 +277,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
     required TResult orElse(),
   }) {
     if (getAllChapters != null) {
@@ -278,6 +293,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     required TResult Function(_GetAllChapters value) getAllChapters,
     required TResult Function(_GetChapter value) getChapter,
     required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
   }) {
     return getAllChapters(this);
   }
@@ -289,6 +305,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult? Function(_GetAllChapters value)? getAllChapters,
     TResult? Function(_GetChapter value)? getChapter,
     TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
   }) {
     return getAllChapters?.call(this);
   }
@@ -300,6 +317,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult Function(_GetAllChapters value)? getAllChapters,
     TResult Function(_GetChapter value)? getChapter,
     TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
     required TResult orElse(),
   }) {
     if (getAllChapters != null) {
@@ -381,6 +399,7 @@ class _$GetChapterImpl implements _GetChapter {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
   }) {
     return getChapter(chapter);
   }
@@ -392,6 +411,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
   }) {
     return getChapter?.call(chapter);
   }
@@ -403,6 +423,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
     required TResult orElse(),
   }) {
     if (getChapter != null) {
@@ -418,6 +439,7 @@ class _$GetChapterImpl implements _GetChapter {
     required TResult Function(_GetAllChapters value) getAllChapters,
     required TResult Function(_GetChapter value) getChapter,
     required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
   }) {
     return getChapter(this);
   }
@@ -429,6 +451,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult? Function(_GetAllChapters value)? getAllChapters,
     TResult? Function(_GetChapter value)? getChapter,
     TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
   }) {
     return getChapter?.call(this);
   }
@@ -440,6 +463,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult Function(_GetAllChapters value)? getAllChapters,
     TResult Function(_GetChapter value)? getChapter,
     TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
     required TResult orElse(),
   }) {
     if (getChapter != null) {
@@ -526,6 +550,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
   }) {
     return getAllVerses(chapter);
   }
@@ -537,6 +562,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
   }) {
     return getAllVerses?.call(chapter);
   }
@@ -548,6 +574,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
     required TResult orElse(),
   }) {
     if (getAllVerses != null) {
@@ -563,6 +590,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     required TResult Function(_GetAllChapters value) getAllChapters,
     required TResult Function(_GetChapter value) getChapter,
     required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
   }) {
     return getAllVerses(this);
   }
@@ -574,6 +602,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult? Function(_GetAllChapters value)? getAllChapters,
     TResult? Function(_GetChapter value)? getChapter,
     TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
   }) {
     return getAllVerses?.call(this);
   }
@@ -585,6 +614,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult Function(_GetAllChapters value)? getAllChapters,
     TResult Function(_GetChapter value)? getChapter,
     TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
     required TResult orElse(),
   }) {
     if (getAllVerses != null) {
@@ -604,12 +634,133 @@ abstract class _GetAllVerses implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetPaticularVerseImplCopyWith<$Res> {
+  factory _$$GetPaticularVerseImplCopyWith(_$GetPaticularVerseImpl value,
+          $Res Function(_$GetPaticularVerseImpl) then) =
+      __$$GetPaticularVerseImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPaticularVerseImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetPaticularVerseImpl>
+    implements _$$GetPaticularVerseImplCopyWith<$Res> {
+  __$$GetPaticularVerseImplCopyWithImpl(_$GetPaticularVerseImpl _value,
+      $Res Function(_$GetPaticularVerseImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPaticularVerseImpl implements _GetPaticularVerse {
+  const _$GetPaticularVerseImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getVerse()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPaticularVerseImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() setInitialState,
+    required TResult Function() getAllChapters,
+    required TResult Function(int chapter) getChapter,
+    required TResult Function(int chapter) getAllVerses,
+    required TResult Function() getVerse,
+  }) {
+    return getVerse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setInitialState,
+    TResult? Function()? getAllChapters,
+    TResult? Function(int chapter)? getChapter,
+    TResult? Function(int chapter)? getAllVerses,
+    TResult? Function()? getVerse,
+  }) {
+    return getVerse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setInitialState,
+    TResult Function()? getAllChapters,
+    TResult Function(int chapter)? getChapter,
+    TResult Function(int chapter)? getAllVerses,
+    TResult Function()? getVerse,
+    required TResult orElse(),
+  }) {
+    if (getVerse != null) {
+      return getVerse();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetinitialState value) setInitialState,
+    required TResult Function(_GetAllChapters value) getAllChapters,
+    required TResult Function(_GetChapter value) getChapter,
+    required TResult Function(_GetAllVerses value) getAllVerses,
+    required TResult Function(_GetPaticularVerse value) getVerse,
+  }) {
+    return getVerse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetinitialState value)? setInitialState,
+    TResult? Function(_GetAllChapters value)? getAllChapters,
+    TResult? Function(_GetChapter value)? getChapter,
+    TResult? Function(_GetAllVerses value)? getAllVerses,
+    TResult? Function(_GetPaticularVerse value)? getVerse,
+  }) {
+    return getVerse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetinitialState value)? setInitialState,
+    TResult Function(_GetAllChapters value)? getAllChapters,
+    TResult Function(_GetChapter value)? getChapter,
+    TResult Function(_GetAllVerses value)? getAllVerses,
+    TResult Function(_GetPaticularVerse value)? getVerse,
+    required TResult orElse(),
+  }) {
+    if (getVerse != null) {
+      return getVerse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetPaticularVerse implements HomeEvent {
+  const factory _GetPaticularVerse() = _$GetPaticularVerseImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   Key? get key => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   List<ChapterModel> get allChapters => throw _privateConstructorUsedError;
   ChapterModel? get chapter => throw _privateConstructorUsedError;
   List<VerseModel> get allVerses => throw _privateConstructorUsedError;
+  VerseModel? get verse => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -626,7 +777,8 @@ abstract class $HomeStateCopyWith<$Res> {
       bool isLoading,
       List<ChapterModel> allChapters,
       ChapterModel? chapter,
-      List<VerseModel> allVerses});
+      List<VerseModel> allVerses,
+      VerseModel? verse});
 }
 
 /// @nodoc
@@ -647,6 +799,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? allChapters = null,
     Object? chapter = freezed,
     Object? allVerses = null,
+    Object? verse = freezed,
   }) {
     return _then(_value.copyWith(
       key: freezed == key
@@ -669,6 +822,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.allVerses
           : allVerses // ignore: cast_nullable_to_non_nullable
               as List<VerseModel>,
+      verse: freezed == verse
+          ? _value.verse
+          : verse // ignore: cast_nullable_to_non_nullable
+              as VerseModel?,
     ) as $Val);
   }
 }
@@ -686,7 +843,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       bool isLoading,
       List<ChapterModel> allChapters,
       ChapterModel? chapter,
-      List<VerseModel> allVerses});
+      List<VerseModel> allVerses,
+      VerseModel? verse});
 }
 
 /// @nodoc
@@ -705,6 +863,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? allChapters = null,
     Object? chapter = freezed,
     Object? allVerses = null,
+    Object? verse = freezed,
   }) {
     return _then(_$HomeStateImpl(
       key: freezed == key
@@ -727,6 +886,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._allVerses
           : allVerses // ignore: cast_nullable_to_non_nullable
               as List<VerseModel>,
+      verse: freezed == verse
+          ? _value.verse
+          : verse // ignore: cast_nullable_to_non_nullable
+              as VerseModel?,
     ));
   }
 }
@@ -739,7 +902,8 @@ class _$HomeStateImpl implements _HomeState {
       required this.isLoading,
       required final List<ChapterModel> allChapters,
       required this.chapter,
-      required final List<VerseModel> allVerses})
+      required final List<VerseModel> allVerses,
+      required this.verse})
       : _allChapters = allChapters,
         _allVerses = allVerses;
 
@@ -766,8 +930,11 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
+  final VerseModel? verse;
+
+  @override
   String toString() {
-    return 'HomeState(key: $key, isLoading: $isLoading, allChapters: $allChapters, chapter: $chapter, allVerses: $allVerses)';
+    return 'HomeState(key: $key, isLoading: $isLoading, allChapters: $allChapters, chapter: $chapter, allVerses: $allVerses, verse: $verse)';
   }
 
   @override
@@ -782,7 +949,8 @@ class _$HomeStateImpl implements _HomeState {
                 .equals(other._allChapters, _allChapters) &&
             (identical(other.chapter, chapter) || other.chapter == chapter) &&
             const DeepCollectionEquality()
-                .equals(other._allVerses, _allVerses));
+                .equals(other._allVerses, _allVerses) &&
+            (identical(other.verse, verse) || other.verse == verse));
   }
 
   @override
@@ -792,7 +960,8 @@ class _$HomeStateImpl implements _HomeState {
       isLoading,
       const DeepCollectionEquality().hash(_allChapters),
       chapter,
-      const DeepCollectionEquality().hash(_allVerses));
+      const DeepCollectionEquality().hash(_allVerses),
+      verse);
 
   @JsonKey(ignore: true)
   @override
@@ -807,7 +976,8 @@ abstract class _HomeState implements HomeState {
       required final bool isLoading,
       required final List<ChapterModel> allChapters,
       required final ChapterModel? chapter,
-      required final List<VerseModel> allVerses}) = _$HomeStateImpl;
+      required final List<VerseModel> allVerses,
+      required final VerseModel? verse}) = _$HomeStateImpl;
 
   @override
   Key? get key;
@@ -819,6 +989,8 @@ abstract class _HomeState implements HomeState {
   ChapterModel? get chapter;
   @override
   List<VerseModel> get allVerses;
+  @override
+  VerseModel? get verse;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

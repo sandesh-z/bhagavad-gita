@@ -6,4 +6,5 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getAllChapters() = _GetAllChapters;
   const factory HomeEvent.getChapter(int chapter) = _GetChapter;
   const factory HomeEvent.getAllVerses(int chapter) = _GetAllVerses;
+  const factory HomeEvent.getVerse() = _GetPaticularVerse;
 }
