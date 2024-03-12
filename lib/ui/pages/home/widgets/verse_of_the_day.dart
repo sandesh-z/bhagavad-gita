@@ -1,7 +1,8 @@
 import 'package:bhagavad_gita/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-import '../../../res/assets.dart';
+import '../../../../utils/assets.dart';
+import '../../../../utils/colors.dart';
 
 class VerseOfTheDay extends StatelessWidget {
   const VerseOfTheDay({super.key});
@@ -40,12 +41,12 @@ class VerseOfTheDay extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               "VERSE OF THE DAY",
                               style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xffF9902D)),
+                                  color: Palette.primary),
                             ),
                             const SizedBox(height: 5.0),
                             Text(

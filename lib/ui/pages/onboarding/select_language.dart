@@ -1,7 +1,8 @@
 import 'package:bhagavad_gita/ui/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
-import '../../res/assets.dart';
+import '../../../utils/assets.dart';
+import '../../../utils/colors.dart';
 import '../../widgets/radio_buttons.dart';
 
 class SelectLanguagePage extends StatefulWidget {
@@ -55,7 +56,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xffF9902D)),
+                          backgroundColor: Palette.primary),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const HomePage()));

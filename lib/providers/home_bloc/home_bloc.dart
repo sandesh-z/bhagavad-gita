@@ -29,9 +29,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetAllChapters(
       _GetAllChapters event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(isLoading: true));
     final res = await bhagavadRemoteDataSource.getAllchapters();
-    emit(res.fold(
-        (l) => state.copyWith(), (r) => state.copyWith(allChapters: r)));
+    emit(res.fold((l) => state.copyWith(isLoading: false),
+        (r) => state.copyWith(allChapters: r, isLoading: false)));
   }
 
   FutureOr<void> _onGetAllVerses(

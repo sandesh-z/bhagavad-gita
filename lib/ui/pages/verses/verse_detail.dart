@@ -1,4 +1,5 @@
 import 'package:bhagavad_gita/models/verse_model.dart';
+import 'package:bhagavad_gita/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class VerseDetailPage extends StatelessWidget {
@@ -32,16 +33,16 @@ class VerseDetailPage extends StatelessWidget {
           children: [
             Text(
               "${verseDetail.chapterNumber}.${verseDetail.verseNumber}",
-              style: const TextStyle(
-                  color: Color(0xff627485),
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20.0),
             Text(
               verseDetail.text ?? "",
               textAlign: TextAlign.center,
+              style: TextStyle(color: Palette.primary),
             ),
+            const SizedBox(height: 10.0),
             Expanded(
               child: ListView.builder(
                 itemCount: verseDetail.translations.length +
@@ -91,17 +92,29 @@ class _Translation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(isCommentary ? "Commentary" : "Translation"),
-        Text(description),
-        const SizedBox(height: 5.0),
+        Text(
+          isCommentary ? "Commentary" : "Translation",
+          style: TextStyle(
+              color: Palette.headingcolor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+        ),
+        const SizedBox(height: 10.0),
+        Text(
+          description.trim(),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 10.0),
         Row(
           children: [
             Text(
               authorName,
+              style: TextStyle(color: Palette.authorColor),
               textAlign: TextAlign.left,
             ),
           ],
-        )
+        ),
+        const SizedBox(height: 20.0),
       ],
     );
   }

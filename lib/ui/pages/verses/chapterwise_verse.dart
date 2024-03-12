@@ -1,12 +1,13 @@
 import 'package:bhagavad_gita/datasource/bhagavad_remote_data_source.dart';
 import 'package:bhagavad_gita/ui/pages/verses/verse_detail.dart';
+import 'package:bhagavad_gita/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../injectable/injections.dart';
 import '../../../providers/home_bloc/home_bloc.dart';
-import '../../res/assets.dart';
+import '../../../utils/assets.dart';
 
 class ChapterWiseVersePage extends StatefulWidget {
   final int chapter;
@@ -85,7 +86,9 @@ class _ChapterWiseVersePageState extends State<ChapterWiseVersePage> {
                   ),
                 );
               } else {
-                return const CircularProgressIndicator();
+                return CircularProgressIndicator(
+                  color: Palette.primary,
+                );
               }
             },
           ),
@@ -117,7 +120,13 @@ class HeadingWidget extends StatelessWidget {
               width: 18,
               child: Image.asset(Assets.chapterIcon),
             ),
-            Text("Chapter $count"),
+            const SizedBox(width: 10.0),
+            Text(
+              "CHAPTER $count",
+              style: const TextStyle(
+                  color: Color(0xff0038FF), fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(width: 10.0),
             SizedBox(
               height: 18,
               width: 18,
@@ -125,7 +134,12 @@ class HeadingWidget extends StatelessWidget {
             )
           ],
         ),
-        Text(title),
+        const SizedBox(height: 5.0),
+        Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(height: 10.0),
         const SizedBox(height: 20.0),
         ReadMoreText(
           description,
@@ -134,9 +148,7 @@ class HeadingWidget extends StatelessWidget {
           trimCollapsedText: 'SHOW MORE',
           trimExpandedText: 'SHOW LESS',
           lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-          moreStyle: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold), // Style for "Read more" text
+          moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -152,25 +164,32 @@ class VerseItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            const Icon(Icons.description),
-            Text("Verse $number"),
-            const Spacer(),
-            InkWell(
-              onTap: onTap,
-              child: const Icon(
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.description,
+                color: Palette.primary,
+              ),
+              const SizedBox(width: 5.0),
+              Text(
+                "Verse $number",
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              const Spacer(),
+              const Icon(
                 Icons.arrow_forward_ios,
                 size: 18.0,
-              ),
-            )
-          ],
-        ),
-        const SizedBox(height: 10.0),
-        Text(description),
-      ],
+              )
+            ],
+          ),
+          const SizedBox(height: 10.0),
+          Text(description),
+        ],
+      ),
     );
   }
 }

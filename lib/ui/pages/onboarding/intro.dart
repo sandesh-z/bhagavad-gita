@@ -1,8 +1,9 @@
 import 'package:bhagavad_gita/ui/pages/onboarding/get_started.dart';
 import 'package:bhagavad_gita/ui/pages/onboarding/select_language.dart';
-import 'package:bhagavad_gita/ui/res/assets.dart';
+import 'package:bhagavad_gita/utils/assets.dart';
 import 'package:bhagavad_gita/utils/utils.dart';
 import 'package:flutter/material.dart';
+import '../../../utils/colors.dart';
 import '../../widgets/dot_widget.dart';
 
 class IntroPage extends StatefulWidget {
@@ -130,8 +131,7 @@ Widget _controlsWidget(
       alignment: Alignment.bottomCenter,
       child: showControls == false
           ? ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xffF9902D)),
+              style: ElevatedButton.styleFrom(backgroundColor: Palette.primary),
               onPressed: () {
                 showDialog(
                     context: context,

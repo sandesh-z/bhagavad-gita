@@ -3,6 +3,7 @@ import 'package:bhagavad_gita/ui/pages/home/widgets/chapters_list.dart';
 import 'package:bhagavad_gita/ui/pages/home/widgets/last_read.dart';
 import 'package:bhagavad_gita/ui/pages/home/widgets/verse_of_the_day.dart';
 import 'package:bhagavad_gita/ui/pages/settings/settings.dart';
+import 'package:bhagavad_gita/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: const Color(0xff5D2EC0),
+          backgroundColor: Palette.primaryBackground,
           title: const Text(
             "BHAGAVAD GITA",
             style: TextStyle(
@@ -60,6 +61,11 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
+                  if (state.isLoading) {
+                    return Center(
+                        child:
+                            CircularProgressIndicator(color: Palette.primary));
+                  }
                   return ChaptersList(chapters: state.allChapters);
                 },
               ),

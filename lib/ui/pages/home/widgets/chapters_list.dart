@@ -1,6 +1,7 @@
 import 'package:bhagavad_gita/ui/pages/verses/chapterwise_verse.dart';
 import 'package:flutter/material.dart';
 import '../../../../models/chapter_model.dart';
+import '../../../../utils/colors.dart';
 
 class ChaptersList extends StatelessWidget {
   final List<ChapterModel> chapters;
@@ -36,9 +37,9 @@ class ChaptersList extends StatelessWidget {
               leading: Container(
                 height: 23.0,
                 width: 23.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xffF9902D),
+                  color: Palette.primary,
                 ),
                 child: Text(
                   "${chapters[index].id}",
