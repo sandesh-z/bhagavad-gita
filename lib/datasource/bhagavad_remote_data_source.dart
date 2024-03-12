@@ -11,8 +11,7 @@ abstract class BhagavadRemoteDataSource {
   Future<Either<Exception, ChapterModel>> getChapter(int chapter);
 
   Future<Either<Exception, List<VerseModel>>> getAllVerses(int chapter);
-  Future<Either<Exception, ChapterModel>> getVerseDetails(
-      int chapter, int verse);
+  Future<Either<Exception, VerseModel>> getVerseDetails(int chapter, int verse);
 }
 
 @LazySingleton(as: BhagavadRemoteDataSource)
@@ -22,7 +21,7 @@ class BhagavadRemoteDataSoureImpl implements BhagavadRemoteDataSource {
   @override
   Future<Either<Exception, List<ChapterModel>>> getAllchapters() async {
     var headers = {
-      'X-RapidAPI-Key': 'c54f17e36dmshda1f1fded6b6f01p17b842jsn3738b297c33a',
+      'X-RapidAPI-Key': 'key',
       'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
     };
     var params = {'limit': '18'};
@@ -44,7 +43,7 @@ class BhagavadRemoteDataSoureImpl implements BhagavadRemoteDataSource {
   @override
   Future<Either<Exception, List<VerseModel>>> getAllVerses(int chapter) async {
     var headers = {
-      'X-RapidAPI-Key': 'c54f17e36dmshda1f1fded6b6f01p17b842jsn3738b297c33a',
+      'X-RapidAPI-Key': 'key',
       'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
     };
 
@@ -63,10 +62,10 @@ class BhagavadRemoteDataSoureImpl implements BhagavadRemoteDataSource {
   }
 
   @override
-  Future<Either<Exception, ChapterModel>> getVerseDetails(
+  Future<Either<Exception, VerseModel>> getVerseDetails(
       int chapter, int verse) async {
     var headers = {
-      'X-RapidAPI-Key': 'c54f17e36dmshda1f1fded6b6f01p17b842jsn3738b297c33a',
+      'X-RapidAPI-Key': 'key',
       'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
     };
 
@@ -74,8 +73,7 @@ class BhagavadRemoteDataSoureImpl implements BhagavadRemoteDataSource {
       final response = await dio.get(
           'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/$chapter/verses/$verse/',
           options: Options(headers: headers));
-
-      return Right(ChapterModel.fromJson(response.data));
+      return Right(VerseModel.fromJson(response.data));
     } catch (e) {
       throw Exception();
     }
@@ -84,7 +82,7 @@ class BhagavadRemoteDataSoureImpl implements BhagavadRemoteDataSource {
   @override
   Future<Either<Exception, ChapterModel>> getChapter(int chapter) async {
     var headers = {
-      'X-RapidAPI-Key': 'c54f17e36dmshda1f1fded6b6f01p17b842jsn3738b297c33a',
+      'X-RapidAPI-Key': 'key',
       'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
     };
 
