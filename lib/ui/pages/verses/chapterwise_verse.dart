@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../core/shared_preferences/shared_pref_util.dart';
 import '../../../injectable/injections.dart';
 import '../../../providers/home_bloc/home_bloc.dart';
 import '../../../utils/assets.dart';
@@ -68,6 +69,12 @@ class _ChapterWiseVersePageState extends State<ChapterWiseVersePage> {
                                               .description ??
                                           "",
                                       onTap: () {
+                                        SharedPreferencesUtils
+                                            .saveLastReadModel(
+                                                state.allVerses[index]
+                                                    .chapterNumber,
+                                                state.allVerses[index]
+                                                    .verseNumber);
                                         Navigator.of(context).push(
                                             MaterialPageRoute(
                                                 builder: (_) => VerseDetailPage(

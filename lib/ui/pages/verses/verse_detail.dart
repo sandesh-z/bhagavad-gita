@@ -1,4 +1,5 @@
 import 'package:bhagavad_gita/models/verse_model.dart';
+import 'package:bhagavad_gita/ui/pages/home/home.dart';
 import 'package:bhagavad_gita/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,15 +14,19 @@ class VerseDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [
+        actions: [
           Row(
             children: [
-              Icon(Icons.bookmark_outline),
-              SizedBox(width: 10.0),
-              Text("Aa"),
-              SizedBox(width: 10.0),
-              Icon(Icons.menu),
-              SizedBox(width: 20.0)
+              const Icon(Icons.bookmark_outline),
+              const SizedBox(width: 10.0),
+              const Text("Aa"),
+              const SizedBox(width: 10.0),
+              InkWell(
+                  onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (_) => const HomePage()),
+                      (route) => false),
+                  child: const Icon(Icons.menu)),
+              const SizedBox(width: 20.0)
             ],
           )
         ],

@@ -20,6 +20,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     context.read<HomeBloc>().add(const HomeEvent.getAllChapters());
+    context.read<HomeBloc>().add(const HomeEvent.getVerse());
+
     super.initState();
   }
 
@@ -57,7 +59,16 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             const VerseOfTheDay(),
-            const LastRead(),
+            BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                if (!state.isLoading && state.verse != null) {
+                  return LastRead(
+                    verse: state.verse!,
+                  );
+                }
+                return Container();
+              },
+            ),
             Expanded(
               child: BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
