@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:bhagavad_gita/core/failure/network/network.dart';
-import 'package:bhagavad_gita/models/chapter_model.dart';
+import 'package:bhagavad_gita/features/models/chapter_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../core/failure/api_failure.dart';
-import '../core/shared_preferences/api_keys.dart';
+import '../../core/failure/api_failure.dart';
+import '../../core/shared_preferences/api_keys.dart';
 import '../models/verse_model.dart';
 
 abstract class BhagavadRemoteDataSource {

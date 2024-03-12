@@ -1,6 +1,6 @@
-import 'package:bhagavad_gita/models/verse_model.dart';
-import 'package:bhagavad_gita/ui/pages/home/home.dart';
-import 'package:bhagavad_gita/utils/colors.dart';
+import 'package:bhagavad_gita/features/models/verse_model.dart';
+import 'package:bhagavad_gita/features/ui/pages/home/home.dart';
+import 'package:bhagavad_gita/features/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class VerseDetailPage extends StatelessWidget {

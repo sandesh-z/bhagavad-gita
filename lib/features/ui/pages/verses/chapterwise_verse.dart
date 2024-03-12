@@ -1,12 +1,12 @@
-import 'package:bhagavad_gita/datasource/bhagavad_remote_data_source.dart';
-import 'package:bhagavad_gita/ui/pages/verses/verse_detail.dart';
-import 'package:bhagavad_gita/utils/colors.dart';
+import 'package:bhagavad_gita/features/datasource/bhagavad_remote_data_source.dart';
+import 'package:bhagavad_gita/features/ui/pages/verses/verse_detail.dart';
+import 'package:bhagavad_gita/features/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
 
-import '../../../core/shared_preferences/shared_pref_util.dart';
-import '../../../injectable/injections.dart';
+import '../../../../core/shared_preferences/shared_pref_util.dart';
+import '../../../../core/injectable/injections.dart';
 import '../../../providers/home_bloc/home_bloc.dart';
 import '../../../utils/assets.dart';
 

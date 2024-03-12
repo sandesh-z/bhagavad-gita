@@ -1,5 +1,5 @@
-import 'package:bhagavad_gita/ui/pages/onboarding/intro.dart';
-import 'package:bhagavad_gita/utils/assets.dart';
+import 'package:bhagavad_gita/features/ui/pages/onboarding/intro.dart';
+import 'package:bhagavad_gita/features/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {

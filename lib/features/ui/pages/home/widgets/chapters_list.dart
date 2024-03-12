@@ -1,4 +1,4 @@
-import 'package:bhagavad_gita/ui/pages/verses/chapterwise_verse.dart';
+import 'package:bhagavad_gita/features/ui/pages/verses/chapterwise_verse.dart';
 import 'package:flutter/material.dart';
 import '../../../../models/chapter_model.dart';
 import '../../../../utils/colors.dart';

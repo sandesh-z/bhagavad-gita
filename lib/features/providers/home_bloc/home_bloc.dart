@@ -1,12 +1,13 @@
 import 'dart:async';
 
-import 'package:bhagavad_gita/datasource/bhagavad_remote_data_source.dart';
+import 'package:bhagavad_gita/core/failure/error/exceptions.dart';
+import 'package:bhagavad_gita/features/datasource/bhagavad_remote_data_source.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/shared_preferences/shared_pref_util.dart';
+import '../../../core/shared_preferences/shared_pref_util.dart';
 import '../../models/chapter_model.dart';
 import '../../models/verse_model.dart';
 
@@ -32,23 +33,36 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onGetAllChapters(
       _GetAllChapters event, Emitter<HomeState> emit) async {
     emit(state.copyWith(isLoading: true));
-    final res = await bhagavadRemoteDataSource.getAllchapters();
-    emit(res.fold((l) => state.copyWith(isLoading: false),
-        (r) => state.copyWith(allChapters: r, isLoading: false)));
+    try {
+      final res = await bhagavadRemoteDataSource.getAllchapters();
+      emit(res.fold((l) => state.copyWith(isLoading: false),
+          (r) => state.copyWith(allChapters: r, isLoading: false)));
+    } on ServerException catch (_) {
+      emit(state.copyWith(failure: true, isLoading: false));
+    }
   }
 
   FutureOr<void> _onGetAllVerses(
       _GetAllVerses event, Emitter<HomeState> emit) async {
     emit(state.copyWith(isLoading: true));
-    final res = await bhagavadRemoteDataSource.getAllVerses(event.chapter);
-    emit(res.fold((l) => state.copyWith(isLoading: false),
-        (r) => state.copyWith(allVerses: r, isLoading: false)));
+    try {
+      final res = await bhagavadRemoteDataSource.getAllVerses(event.chapter);
+      emit(res.fold((l) => state.copyWith(isLoading: false),
+          (r) => state.copyWith(allVerses: r, isLoading: false)));
+    } on ServerException catch (_) {
+      emit(state.copyWith(failure: true, isLoading: false));
+    }
   }
 
   FutureOr<void> _onGetChapter(
       _GetChapter event, Emitter<HomeState> emit) async {
-    final res = await bhagavadRemoteDataSource.getChapter(event.chapter);
-    emit(res.fold((l) => state.copyWith(), (r) => state.copyWith(chapter: r)));
+    try {
+      final res = await bhagavadRemoteDataSource.getChapter(event.chapter);
+      emit(
+          res.fold((l) => state.copyWith(), (r) => state.copyWith(chapter: r)));
+    } on Exception catch (_) {
+      emit(state.copyWith(failure: true, isLoading: false));
+    }
   }
 
   FutureOr<void> _onGetPaticularVerse(
@@ -57,10 +71,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(isLoading: true));
     int chapterNum = lastRead?.chapterNumber ?? 7;
     int verseNum = lastRead?.verseNumber ?? 27;
-    final res =
-        await bhagavadRemoteDataSource.getVerseDetails(chapterNum, verseNum);
-    emit(res.fold((l) => state.copyWith(isLoading: false),
-        (r) => state.copyWith(verse: r, isLoading: false)));
+    try {
+      final res =
+          await bhagavadRemoteDataSource.getVerseDetails(chapterNum, verseNum);
+      emit(res.fold((l) => state.copyWith(isLoading: false),
+          (r) => state.copyWith(verse: r, isLoading: false)));
+    } on Exception catch (_) {
+      emit(state.copyWith(failure: true, isLoading: false));
+    }
   }
 
   Future<LastReadModel?> loadSavedData() async {

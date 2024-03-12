@@ -1,6 +1,6 @@
-import 'package:bhagavad_gita/injectable/injections.dart';
-import 'package:bhagavad_gita/providers/home_bloc/home_bloc.dart';
-import 'package:bhagavad_gita/ui/pages/onboarding/intro.dart';
+import 'package:bhagavad_gita/core/injectable/injections.dart';
+import 'package:bhagavad_gita/features/providers/home_bloc/home_bloc.dart';
+import 'package:bhagavad_gita/features/ui/pages/onboarding/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

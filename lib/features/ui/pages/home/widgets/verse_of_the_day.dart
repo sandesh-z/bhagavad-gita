@@ -1,4 +1,4 @@
-import 'package:bhagavad_gita/utils/utils.dart';
+import 'package:bhagavad_gita/features/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/assets.dart';

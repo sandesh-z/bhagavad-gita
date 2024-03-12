@@ -1,7 +1,7 @@
 import 'package:bhagavad_gita/core/shared_preferences/shared_pref_util.dart';
-import 'package:bhagavad_gita/models/verse_model.dart';
-import 'package:bhagavad_gita/ui/pages/verses/verse_detail.dart';
-import 'package:bhagavad_gita/utils/utils.dart';
+import 'package:bhagavad_gita/features/models/verse_model.dart';
+import 'package:bhagavad_gita/features/ui/pages/verses/verse_detail.dart';
+import 'package:bhagavad_gita/features/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class LastRead extends StatefulWidget {

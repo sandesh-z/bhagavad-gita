@@ -1,7 +1,7 @@
-import 'package:bhagavad_gita/ui/pages/onboarding/get_started.dart';
-import 'package:bhagavad_gita/ui/pages/onboarding/select_language.dart';
-import 'package:bhagavad_gita/utils/assets.dart';
-import 'package:bhagavad_gita/utils/utils.dart';
+import 'package:bhagavad_gita/features/ui/pages/onboarding/get_started.dart';
+import 'package:bhagavad_gita/features/ui/pages/onboarding/select_language.dart';
+import 'package:bhagavad_gita/features/utils/assets.dart';
+import 'package:bhagavad_gita/features/utils/utils.dart';
 import 'package:flutter/material.dart';
 import '../../../utils/colors.dart';
 import '../../widgets/dot_widget.dart';

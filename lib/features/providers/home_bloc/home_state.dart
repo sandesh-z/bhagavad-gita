@@ -5,6 +5,7 @@ class HomeState with _$HomeState {
   const factory HomeState({
     required Key? key,
     required bool isLoading,
+    required bool failure,
     required List<ChapterModel> allChapters,
     required ChapterModel? chapter,
     required List<VerseModel> allVerses,
@@ -17,5 +18,6 @@ class HomeState with _$HomeState {
       allChapters: [],
       chapter: null,
       allVerses: [],
+      failure: false,
       verse: null);
 }

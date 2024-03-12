@@ -757,6 +757,7 @@ abstract class _GetPaticularVerse implements HomeEvent {
 mixin _$HomeState {
   Key? get key => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get failure => throw _privateConstructorUsedError;
   List<ChapterModel> get allChapters => throw _privateConstructorUsedError;
   ChapterModel? get chapter => throw _privateConstructorUsedError;
   List<VerseModel> get allVerses => throw _privateConstructorUsedError;
@@ -775,6 +776,7 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {Key? key,
       bool isLoading,
+      bool failure,
       List<ChapterModel> allChapters,
       ChapterModel? chapter,
       List<VerseModel> allVerses,
@@ -796,6 +798,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? key = freezed,
     Object? isLoading = null,
+    Object? failure = null,
     Object? allChapters = null,
     Object? chapter = freezed,
     Object? allVerses = null,
@@ -809,6 +812,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
               as bool,
       allChapters: null == allChapters
           ? _value.allChapters
@@ -841,6 +848,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {Key? key,
       bool isLoading,
+      bool failure,
       List<ChapterModel> allChapters,
       ChapterModel? chapter,
       List<VerseModel> allVerses,
@@ -860,6 +868,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? key = freezed,
     Object? isLoading = null,
+    Object? failure = null,
     Object? allChapters = null,
     Object? chapter = freezed,
     Object? allVerses = null,
@@ -873,6 +882,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
               as bool,
       allChapters: null == allChapters
           ? _value._allChapters
@@ -900,6 +913,7 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {required this.key,
       required this.isLoading,
+      required this.failure,
       required final List<ChapterModel> allChapters,
       required this.chapter,
       required final List<VerseModel> allVerses,
@@ -911,6 +925,8 @@ class _$HomeStateImpl implements _HomeState {
   final Key? key;
   @override
   final bool isLoading;
+  @override
+  final bool failure;
   final List<ChapterModel> _allChapters;
   @override
   List<ChapterModel> get allChapters {
@@ -934,7 +950,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(key: $key, isLoading: $isLoading, allChapters: $allChapters, chapter: $chapter, allVerses: $allVerses, verse: $verse)';
+    return 'HomeState(key: $key, isLoading: $isLoading, failure: $failure, allChapters: $allChapters, chapter: $chapter, allVerses: $allVerses, verse: $verse)';
   }
 
   @override
@@ -945,6 +961,7 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.key, key) || other.key == key) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.failure, failure) || other.failure == failure) &&
             const DeepCollectionEquality()
                 .equals(other._allChapters, _allChapters) &&
             (identical(other.chapter, chapter) || other.chapter == chapter) &&
@@ -958,6 +975,7 @@ class _$HomeStateImpl implements _HomeState {
       runtimeType,
       key,
       isLoading,
+      failure,
       const DeepCollectionEquality().hash(_allChapters),
       chapter,
       const DeepCollectionEquality().hash(_allVerses),
@@ -974,6 +992,7 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final Key? key,
       required final bool isLoading,
+      required final bool failure,
       required final List<ChapterModel> allChapters,
       required final ChapterModel? chapter,
       required final List<VerseModel> allVerses,
@@ -983,6 +1002,8 @@ abstract class _HomeState implements HomeState {
   Key? get key;
   @override
   bool get isLoading;
+  @override
+  bool get failure;
   @override
   List<ChapterModel> get allChapters;
   @override

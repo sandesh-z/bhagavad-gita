@@ -1,4 +1,4 @@
-import 'package:bhagavad_gita/injectable/injections.config.dart';
+import 'package:bhagavad_gita/core/injectable/injections.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
