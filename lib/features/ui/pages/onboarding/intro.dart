@@ -134,10 +134,9 @@ Widget _controlsWidget(
               style: ElevatedButton.styleFrom(backgroundColor: Palette.primary),
               onPressed: () {
                 showDialog(
+                    barrierDismissible: false,
                     context: context,
                     builder: (_) => const SelectLanguagePage());
-                // Navigator.of(context).push(MaterialPageRoute(
-                //     builder: (_) => const SelectLanguagePage()));
               },
               child: const Text(
                 'Get Started',

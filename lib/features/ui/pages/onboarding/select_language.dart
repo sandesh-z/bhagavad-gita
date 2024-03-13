@@ -58,8 +58,9 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Palette.primary),
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const HomePage()));
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(builder: (_) => const HomePage()),
+                            (route) => false);
                       },
                       child: const Row(
                         mainAxisSize: MainAxisSize.min,
