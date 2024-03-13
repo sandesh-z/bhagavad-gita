@@ -22,7 +22,7 @@ mixin _$HomeEvent {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +31,7 @@ mixin _$HomeEvent {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$HomeEvent {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,7 +133,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) {
     return setInitialState();
   }
@@ -145,7 +145,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) {
     return setInitialState?.call();
   }
@@ -157,7 +157,7 @@ class _$SetinitialStateImpl implements _SetinitialState {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) {
     if (setInitialState != null) {
@@ -253,7 +253,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) {
     return getAllChapters();
   }
@@ -265,7 +265,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) {
     return getAllChapters?.call();
   }
@@ -277,7 +277,7 @@ class _$GetAllChaptersImpl implements _GetAllChapters {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) {
     if (getAllChapters != null) {
@@ -399,7 +399,7 @@ class _$GetChapterImpl implements _GetChapter {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) {
     return getChapter(chapter);
   }
@@ -411,7 +411,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) {
     return getChapter?.call(chapter);
   }
@@ -423,7 +423,7 @@ class _$GetChapterImpl implements _GetChapter {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) {
     if (getChapter != null) {
@@ -550,7 +550,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) {
     return getAllVerses(chapter);
   }
@@ -562,7 +562,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) {
     return getAllVerses?.call(chapter);
   }
@@ -574,7 +574,7 @@ class _$GetAllVersesImpl implements _GetAllVerses {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) {
     if (getAllVerses != null) {
@@ -638,6 +638,8 @@ abstract class _$$GetPaticularVerseImplCopyWith<$Res> {
   factory _$$GetPaticularVerseImplCopyWith(_$GetPaticularVerseImpl value,
           $Res Function(_$GetPaticularVerseImpl) then) =
       __$$GetPaticularVerseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool random});
 }
 
 /// @nodoc
@@ -647,26 +649,52 @@ class __$$GetPaticularVerseImplCopyWithImpl<$Res>
   __$$GetPaticularVerseImplCopyWithImpl(_$GetPaticularVerseImpl _value,
       $Res Function(_$GetPaticularVerseImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? random = null,
+  }) {
+    return _then(_$GetPaticularVerseImpl(
+      null == random
+          ? _value.random
+          : random // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetPaticularVerseImpl implements _GetPaticularVerse {
-  const _$GetPaticularVerseImpl();
+  const _$GetPaticularVerseImpl([this.random = false]);
+
+  @override
+  @JsonKey()
+  final bool random;
 
   @override
   String toString() {
-    return 'HomeEvent.getVerse()';
+    return 'HomeEvent.getVerse(random: $random)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPaticularVerseImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetPaticularVerseImpl &&
+            (identical(other.random, random) || other.random == random));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, random);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPaticularVerseImplCopyWith<_$GetPaticularVerseImpl> get copyWith =>
+      __$$GetPaticularVerseImplCopyWithImpl<_$GetPaticularVerseImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -675,9 +703,9 @@ class _$GetPaticularVerseImpl implements _GetPaticularVerse {
     required TResult Function() getAllChapters,
     required TResult Function(int chapter) getChapter,
     required TResult Function(int chapter) getAllVerses,
-    required TResult Function() getVerse,
+    required TResult Function(bool random) getVerse,
   }) {
-    return getVerse();
+    return getVerse(random);
   }
 
   @override
@@ -687,9 +715,9 @@ class _$GetPaticularVerseImpl implements _GetPaticularVerse {
     TResult? Function()? getAllChapters,
     TResult? Function(int chapter)? getChapter,
     TResult? Function(int chapter)? getAllVerses,
-    TResult? Function()? getVerse,
+    TResult? Function(bool random)? getVerse,
   }) {
-    return getVerse?.call();
+    return getVerse?.call(random);
   }
 
   @override
@@ -699,11 +727,11 @@ class _$GetPaticularVerseImpl implements _GetPaticularVerse {
     TResult Function()? getAllChapters,
     TResult Function(int chapter)? getChapter,
     TResult Function(int chapter)? getAllVerses,
-    TResult Function()? getVerse,
+    TResult Function(bool random)? getVerse,
     required TResult orElse(),
   }) {
     if (getVerse != null) {
-      return getVerse();
+      return getVerse(random);
     }
     return orElse();
   }
@@ -750,7 +778,13 @@ class _$GetPaticularVerseImpl implements _GetPaticularVerse {
 }
 
 abstract class _GetPaticularVerse implements HomeEvent {
-  const factory _GetPaticularVerse() = _$GetPaticularVerseImpl;
+  const factory _GetPaticularVerse([final bool random]) =
+      _$GetPaticularVerseImpl;
+
+  bool get random;
+  @JsonKey(ignore: true)
+  _$$GetPaticularVerseImplCopyWith<_$GetPaticularVerseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

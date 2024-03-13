@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bhagavad_gita/core/failure/error/exceptions.dart';
 import 'package:bhagavad_gita/features/datasource/bhagavad_remote_data_source.dart';
+import 'package:bhagavad_gita/features/utils/generate_random_chapter_with_verse.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -67,13 +68,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetPaticularVerse(
       _GetPaticularVerse event, Emitter<HomeState> emit) async {
-    LastReadModel? lastRead = await loadSavedData();
+    late LastReadModel? lastReadModel;
+    if (event.random) {
+      lastReadModel = generateRandomVerse();
+    } else {
+      lastReadModel = await loadSavedData();
+    }
+
     emit(state.copyWith(isLoading: true));
-    int chapterNum = lastRead?.chapterNumber ?? 7;
-    int verseNum = lastRead?.verseNumber ?? 27;
+
     try {
-      final res =
-          await bhagavadRemoteDataSource.getVerseDetails(chapterNum, verseNum);
+      final res = await bhagavadRemoteDataSource.getVerseDetails(
+          lastReadModel?.chapterNumber ?? 7, lastReadModel?.verseNumber ?? 27);
       emit(res.fold((l) => state.copyWith(isLoading: false),
           (r) => state.copyWith(verse: r, isLoading: false)));
     } on Exception catch (_) {
