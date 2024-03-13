@@ -40,6 +40,9 @@ class VerseOfTheDay extends StatelessWidget {
                 child: Container(
                   height: 161.0,
                   margin: const EdgeInsets.symmetric(horizontal: 25.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.white)),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Stack(
