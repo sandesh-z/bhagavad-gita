@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:bhagavad_gita/core/failure/error/exceptions.dart';
 import 'package:bhagavad_gita/features/datasource/bhagavad_remote_data_source.dart';
 import 'package:bhagavad_gita/features/utils/generate_random_chapter_with_verse.dart';
 import 'package:bloc/bloc.dart';
@@ -36,9 +35,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(isLoading: true));
     try {
       final res = await bhagavadRemoteDataSource.getAllchapters();
-      emit(res.fold((l) => state.copyWith(isLoading: false),
-          (r) => state.copyWith(allChapters: r, isLoading: false)));
-    } on ServerException catch (_) {
+      emit(res.fold(
+          (l) => state.copyWith(isLoading: false, failure: true),
+          (r) => state.copyWith(
+              allChapters: r, isLoading: false, failure: false)));
+    } catch (_) {
       emit(state.copyWith(failure: true, isLoading: false));
     }
   }
@@ -48,9 +49,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(isLoading: true));
     try {
       final res = await bhagavadRemoteDataSource.getAllVerses(event.chapter);
-      emit(res.fold((l) => state.copyWith(isLoading: false),
-          (r) => state.copyWith(allVerses: r, isLoading: false)));
-    } on ServerException catch (_) {
+      emit(res.fold(
+          (l) => state.copyWith(isLoading: false, failure: true),
+          (r) =>
+              state.copyWith(allVerses: r, isLoading: false, failure: false)));
+    } catch (_) {
       emit(state.copyWith(failure: true, isLoading: false));
     }
   }
@@ -59,8 +62,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       _GetChapter event, Emitter<HomeState> emit) async {
     try {
       final res = await bhagavadRemoteDataSource.getChapter(event.chapter);
-      emit(
-          res.fold((l) => state.copyWith(), (r) => state.copyWith(chapter: r)));
+      emit(res.fold((l) => state.copyWith(isLoading: false, failure: true),
+          (r) => state.copyWith(chapter: r, failure: false)));
     } on Exception catch (_) {
       emit(state.copyWith(failure: true, isLoading: false));
     }
@@ -80,10 +83,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       final res = await bhagavadRemoteDataSource.getVerseDetails(
           lastReadModel?.chapterNumber ?? 7, lastReadModel?.verseNumber ?? 27);
-      emit(res.fold((l) => state.copyWith(isLoading: false),
-          (r) => state.copyWith(verse: r, isLoading: false)));
-    } on Exception catch (_) {
-      emit(state.copyWith(failure: true, isLoading: false));
+      emit(res.fold((l) => state.copyWith(isLoading: false, failure: true),
+          (r) => state.copyWith(verse: r, isLoading: false, failure: false)));
+    } catch (_) {
+      emit(state.copyWith(
+        failure: true,
+        isLoading: false,
+      ));
     }
   }
 

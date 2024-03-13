@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: BlocBuilder<HomeBloc, HomeState>(
-                builder: (context, state) {
+                builder: (_, state) {
                   if (state.failure) {
                     return Center(
                       child: errorView(

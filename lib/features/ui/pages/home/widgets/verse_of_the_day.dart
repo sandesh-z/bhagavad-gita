@@ -1,4 +1,5 @@
 import 'package:bhagavad_gita/features/ui/pages/verses/verse_detail.dart';
+import 'package:bhagavad_gita/features/ui/widgets/error_widget.dart';
 import 'package:bhagavad_gita/features/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -67,6 +68,14 @@ class VerseOfTheDay extends StatelessWidget {
                               const SizedBox(height: 5.0),
                               BlocBuilder<HomeBloc, HomeState>(
                                 builder: (context, state) {
+                                  if (state.failure) {
+                                    return errorView(
+                                        errorType: ErrorType.server_error,
+                                        onRefresh: () {
+                                          context.read<HomeBloc>().add(
+                                              const HomeEvent.getVerse(true));
+                                        });
+                                  }
                                   if (state.isLoading) {
                                     return Center(
                                       child: CircularProgressIndicator(
@@ -107,13 +116,15 @@ class VerseOfTheDay extends StatelessWidget {
                                                                 state.verse!)));
                                           }
                                         },
-                                        child: const Text(
-                                          " READ MORE",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 18.0),
-                                        ),
+                                        child: state.verse != null
+                                            ? const Text(
+                                                " READ MORE",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 18.0),
+                                              )
+                                            : Container(),
                                       )
                                     ],
                                   );
