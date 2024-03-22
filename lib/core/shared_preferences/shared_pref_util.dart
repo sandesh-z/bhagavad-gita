@@ -1,8 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesUtils {
-  static const String _keyChapterNumber = 'username';
-  static const String _keyVerseNumber = 'logged_in';
+  static const String _keyChapterNumber = 'chapter_number';
+  static const String _keyVerseNumber = 'verse_number';
   static Future<void> saveLastReadModel(
       int chapterNumber, int verseNumber) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
