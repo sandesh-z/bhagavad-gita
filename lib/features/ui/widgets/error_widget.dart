@@ -21,16 +21,6 @@ Widget errorView({
       errorText = 'An unknown error occoured!\nTap to retry';
 
       break;
-
-    case ErrorType.user_not_found:
-      errorText = 'User is not yet register. Please SignUp!';
-
-      break;
-
-    case ErrorType.unknown_device:
-      errorText = 'Unknown device detected\nTap to retry';
-
-      break;
   }
 
   return Center(
@@ -57,7 +47,6 @@ Widget errorView({
 enum ErrorType {
   no_internet,
   server_error,
-  user_not_found,
-  unknown_device,
+
   other,
 }

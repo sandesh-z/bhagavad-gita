@@ -46,7 +46,6 @@ class _RadioButtonsState extends State<RadioButtons> {
                 onChanged: (value) {
                   setState(() {
                     selectedOption = value ?? 1;
-                    // _value = value ?? 1;
                   });
                 },
               ),

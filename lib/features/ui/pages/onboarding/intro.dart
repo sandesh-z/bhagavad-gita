@@ -151,7 +151,7 @@ Widget _controlsWidget(
                       onPressed: () {
                         Navigator.push(
                             context,
-                            CustomDiagonalSlideTransition(
+                            CustomSlideTransition(
                                 child: const GetStartedPage()));
                       },
                       child: const Text(
@@ -167,7 +167,7 @@ Widget _controlsWidget(
                       if (currentPage == length - 1) {
                         Navigator.push(
                             context,
-                            CustomDiagonalSlideTransition(
+                            CustomSlideTransition(
                                 child: const GetStartedPage()));
                       }
                       controller?.nextPage(

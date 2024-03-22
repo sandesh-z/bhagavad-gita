@@ -14,10 +14,6 @@ class LastRead extends StatefulWidget {
 
 class _LastReadState extends State<LastRead> {
   LastReadModel? lastReadModel;
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomDiagonalSlideTransition extends PageRouteBuilder {
+class CustomSlideTransition extends PageRouteBuilder {
   final Widget child;
-  CustomDiagonalSlideTransition({required this.child})
+  CustomSlideTransition({required this.child})
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => child,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
